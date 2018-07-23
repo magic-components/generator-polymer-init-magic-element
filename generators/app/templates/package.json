@@ -1,0 +1,27 @@
+{
+  "name": "<%= elementName %>",
+  "description": "<%= elementDesc %>",
+  "version": "0.1.0",
+  "author": {
+    "name": "<%= githubAccount %>"
+  },
+  "bugs": {
+    "url": "https://github.com/<%= githubAccount %>/<%= elementGithubRepo %>/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<%= githubAccount %>/<%= elementGithubRepo %>"
+  },
+  "keywords": [
+    "polymer",
+    "polymer-3",
+		"web-components",
+		"<%= elementName %>"
+  ],
+  "license": "MIT",
+  "main": "<%= elementName %>.js",
+  "dependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
+    "@polymer/polymer": "^3.0.2"
+  }
+}

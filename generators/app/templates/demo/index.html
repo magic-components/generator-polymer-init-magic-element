@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title><%= elementName %> demo</title>
+
+    <script type="module" src="../node_modules/@polymer/iron-demo-helpers/demo-pages-shared-styles.js"></script>
+    <script type="module" src="../node_modules/@polymer/iron-demo-helpers/demo-snippet.js"></script>
+    <script type="module" src="../index.js"></script>
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+        .vertical-section-container {
+          max-width: 500px;
+        }
+      </style>
+    </custom-style>
+
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Default <%= elementName %> demo</h3>
+      <demo-snippet class="default">
+        <template>
+          <<%= elementName %>></<%= elementName %>>
+        </template>
+			</demo-snippet>
+			<h3><%= elementName %> with prop demo</h3>
+      <demo-snippet>
+        <template>
+          <<%= elementName %> text="yeaaaah"></<%= elementName %>>
+        </template>
+      </demo-snippet>
+      <h3>Custom <%= elementName %> demo</h3>
+      <demo-snippet>
+        <template>
+          <style is="custom-style">
+            .super {
+              --<%= elementName %>-color: #8B0000;
+            }
+          </style>
+          <<%= elementName %> class="super"></<%= elementName %>>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>

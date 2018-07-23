@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Larissa Abreu",
+      "authorEmail": "larissa.a.abreu@hotmail.com",
+      "authorUrl": "https://larissaabreu.github.io/"
+    }
+  }
+}
