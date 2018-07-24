@@ -1,6 +1,6 @@
 {
   "name": "generator-polymer-init-magic-element",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A generator for magic web components with Polymer 3",
   "homepage": "https://github.com/magic-components/generator-polymer-init-magic-element",
   "author": {

@@ -7,7 +7,11 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the bedazzling ${chalk.red('generator-polymer-init-magic-element')} generator!`)
+      yosay(
+        `Welcome to the bedazzling ${chalk.red(
+          'generator-polymer-init-magic-element'
+        )} generator!`
+      )
     );
 
     const prompts = [
@@ -16,7 +20,7 @@ module.exports = class extends Generator {
         name: 'elementName',
         message: 'What is the name of the element?',
         default: 'magic-element'
-			},
+      },
       {
         type: 'input',
         name: 'elementDesc',
@@ -44,24 +48,56 @@ module.exports = class extends Generator {
   }
 
   writing() {
-		const elementName = this.props.elementName;
+    const elementName = this.props.elementName;
 
     this.fs.copyTpl(
-      `${this.templatePath()}/**/!(_)*`,
-			this.destinationPath(''),
-			this.props
-		);
-		
-		this.fs.copyTpl(
-			this.templatePath('_element.js'),
-			this.destinationPath(`${elementName}.js`),
-			this.props
-		)
+      this.templatePath('demo/index.html'),
+      this.destinationPath('demo/index.html'),
+      this.props
+    );
 
-		this.fs.copy(
-			this.templatePath('_gitignore'),
-			this.destinationPath('.gitignore')
-		)
+    this.fs.copyTpl(
+      this.templatePath('_element.js'),
+      this.destinationPath(`${elementName}.js`),
+      this.props
+    );
+
+    this.fs.copy(this.templatePath('_gitignore'), this.destinationPath('.gitignore'));
+
+    this.fs.copy(
+      this.templatePath('CONTRIBUTING.md'),
+      this.destinationPath('CONTRIBUTING.md')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('index.html'),
+      this.destinationPath('index.html'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('index.js'),
+      this.destinationPath('index.js'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('LICENSE.md'),
+      this.destinationPath('LICENSE.md'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('package.json'),
+      this.destinationPath('package.json'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('README.md'),
+      this.destinationPath('README.md'),
+      this.props
+    );
   }
 
   install() {
